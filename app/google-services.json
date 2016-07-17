@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "30616442316",
+    "firebase_url": "https://cricboard-80f6d.firebaseio.com",
+    "project_id": "cricboard-80f6d",
+    "storage_bucket": "cricboard-80f6d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:30616442316:android:8aa0a208a38f5493",
+        "android_client_info": {
+          "package_name": "com.jujitsutech.cricboard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "30616442316-ph7grqhufhulqqgdn6n00hqrlirbf0lk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [{ "current_key": "" }],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
