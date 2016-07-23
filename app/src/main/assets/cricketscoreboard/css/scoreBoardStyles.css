@@ -206,7 +206,7 @@ h3 {
     margin-top: 3%;
     opacity: 1;
     height: 30px;
-    border: 4px #F3F4F1 solid;
+    border: 1px #100b0b solid;
     border-radius: 22px;
 }
 
@@ -230,7 +230,7 @@ button, input {
     color: #6a7989;
     font-weight: bold;
     font-size: 70.25%;
-
+    
 }
 
 .ip_title {
@@ -253,7 +253,7 @@ button, input {
     position: absolute;
     top: 0;
     left: 0;
-    width: 50%;
+    width: 56%;
     height: 100%;
     border: 2px solid #fafafd;
     -webkit-transition: -webkit-transform 0.3s;
@@ -494,12 +494,10 @@ div,li {
     margin-left: 34%;
 }
 .close a{
-    color: #fff;
+    color: #FB1B1B;
     text-decoration: none;
-    display: inline-block;
-    padding: 5px 10px;
-    border-radius: 5px;
-    background-color: #E74C3C;
+    font-size: 38px;
+    font-weight: 800;
 }
 .battingBtn{
     float: right;
@@ -523,15 +521,15 @@ and (-webkit-min-device-pixel-ratio: 2) {
     .scoreBoard-widget {
         width: 80%;
     }
-
+    
     .scoreBoard_Container3 {
         min-height: 150px;
     }
-
+    
     .scoreBoard_Container1 {
-        min-height: 142px;
+        min-height: 157px;
     }
-
+    
     .scoreBoard-widget .innerBoard .number {
         line-height: 69px;
         float: left;
@@ -540,47 +538,47 @@ and (-webkit-min-device-pixel-ratio: 2) {
         letter-spacing: -3.5px;
         padding: 9px 0 0;
     }
-
+    
     .scoreCard {
         margin-left: 8%;
     }
-
+    
     .oversDetails {
         height: 100px;
     }
-
+    
     .nav .paddingLeft10 {
         padding-left: 10px;
     }
-
+    
     .template {
         margin-left: 8%;
     }
-
+    
     .teamB, .teamA {
         width: 49%;
     }
-
+    
     .scoreBoardWrapper {
         margin-left: 8%;
         margin-top: 24%;
     }
-
+    
     .boardSettings {
         margin: 8% 1% 0 15%;
     }
     .ip_title {
-        padding: 18% 0 1% 5%;
+        padding: 22% 0 1% 5%;
     }
     .mainBoardContainer {
-        margin-top: 50%;
+        margin-top: 30%;
     }
     .undoIcon {
         margin-top: -14px;
     }
     .extraRunsModel-content {
         height: 384px;
-        width: 200px;
+        width: 194px;
     }
     #extraRunsModel:target {
         left: 55%;
@@ -589,21 +587,21 @@ and (-webkit-min-device-pixel-ratio: 2) {
         margin-left: 30%;
     }
     .battingBtn{
-    right: 15%;
-    top: 45%;
-}
-.bowlingBtn{
-    
-    right: 15%;
-    top: 61%;
-}
+        right: 15%;
+        top: 38%;
+    }
+    .bowlingBtn{
+        
+        right: 15%;
+        top: 56%;
+    }
     .close {
-    margin-left: 34% !important;
-}
+        margin-left: 34% !important;
+    }
     #alertsModel .close {
-    margin-left: 42% !important;
+        margin-left: 42% !important;
         margin-top: 53%;
-}
+    }
 }
 header {
     background: #fff;
@@ -656,7 +654,6 @@ li {
         display: inline-block;
     }
     nav ul, nav:active ul {
-        display: none;
         position: absolute;
         padding: 20px;
         background: #fff;
@@ -672,10 +669,11 @@ li {
         padding: 10px 0;
         margin: 0;
         border-bottom: 1px solid rgb(8, 8, 8);
+        font-size: 18px;
     }
-    nav:hover ul {
-        display: block;
-    }
+    /*nav:hover ul {*/
+    /*display: block;*/
+    /*}*/
 }
 
 /*changes*/
@@ -730,65 +728,63 @@ li:hover {
     border-radius:40px;
 }
 
-
-
-
 input[type=checkbox]:not(old),
 input[type=radio   ]:not(old){
-  width     : 2em;
-  margin    : 0;
-  padding   : 0;
-  font-size : 1em;
-  opacity   : 0;
+    width     : 2em;
+    margin    : 0;
+    padding   : 0;
+    font-size : 1em;
+    opacity   : 0;
 }
 input[type=checkbox]:not(old) + label > span,
 input[type=radio   ]:not(old) + label > span{
-  display          : inline-block;
-  width            : 0.875em;
-  height           : 0.875em;
-  margin           : 0.25em 0.5em 0.25em 0.25em;
-  border           : 0.0625em solid rgb(192,192,192);
-  border-radius    : 0.25em;
-  background       : rgb(224,224,224);
-  background-image :    -moz-linear-gradient(rgb(240,240,240),rgb(224,224,224));
-  background-image :     -ms-linear-gradient(rgb(240,240,240),rgb(224,224,224));
-  background-image :      -o-linear-gradient(rgb(240,240,240),rgb(224,224,224));
-  background-image : -webkit-linear-gradient(rgb(240,240,240),rgb(224,224,224));
-  background-image :         linear-gradient(rgb(240,240,240),rgb(224,224,224));
-  vertical-align   : bottom;
+    display          : inline-block;
+    width            : 0.875em;
+    height           : 0.875em;
+    margin           : 0.25em 0.5em 0.25em 0.25em;
+    border           : 0.0625em solid rgb(192,192,192);
+    border-radius    : 0.25em;
+    background       : rgb(224,224,224);
+    background-image :    -moz-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+    background-image :     -ms-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+    background-image :      -o-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+    background-image : -webkit-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+    background-image :         linear-gradient(rgb(240,240,240),rgb(224,224,224));
+    vertical-align   : bottom;
 }
 
 input[type=checkbox]:not(old):checked + label > span,
 input[type=radio   ]:not(old):checked + label > span{
-  background-image :    -moz-linear-gradient(rgb(224,224,224),rgb(240,240,240));
-  background-image :     -ms-linear-gradient(rgb(224,224,224),rgb(240,240,240));
-  background-image :      -o-linear-gradient(rgb(224,224,224),rgb(240,240,240));
-  background-image : -webkit-linear-gradient(rgb(224,224,224),rgb(240,240,240));
-  background-image :         linear-gradient(rgb(224,224,224),rgb(240,240,240));
+    background-image :    -moz-linear-gradient(rgb(224,224,224),rgb(240,240,240));
+    background-image :     -ms-linear-gradient(rgb(224,224,224),rgb(240,240,240));
+    background-image :      -o-linear-gradient(rgb(224,224,224),rgb(240,240,240));
+    background-image : -webkit-linear-gradient(rgb(224,224,224),rgb(240,240,240));
+    background-image :         linear-gradient(rgb(224,224,224),rgb(240,240,240));
 }
 
 input[type=checkbox]:not(old):checked + label > span:before{
-  content     : '✓';
-  display     : block;
-  width       : 1em;
-  color       : rgb(153,204,102);
-  font-size   : 0.875em;
-  line-height : 1em;
-  text-align  : center;
-  text-shadow : 0 0 0.0714em rgb(115,153,77);
-  font-weight : bold;
+    content     : '✓';
+    display     : block;
+    width       : 1em;
+    color       : rgb(153,204,102);
+    font-size   : 0.875em;
+    line-height : 1em;
+    text-align  : center;
+    text-shadow : 0 0 0.0714em rgb(115,153,77);
+    font-weight : bold;
 }
 
 input[type=radio]:not(old):checked +  label > span > span{
-  display: block;
+    display: block;
     width: 0.5em;
     height: 0.5em;
     margin: 0.125em;
-    border: 0.0625em solid rgb(115,153,77);
+    border: 0.0625em solid rgb(107, 17, 8);
     background-image: -moz-linear-gradient(rgb(179,217,140),rgb(153,204,102));
     background-image: -ms-linear-gradient(rgb(179,217,140),rgb(153,204,102));
     background-image: -o-linear-gradient(rgb(179,217,140),rgb(153,204,102));
-    background-color: #0a0000;
+    background-color: #7b0c0c;
+    border-radius: 30px;
 }
 .cricIcon{
     width: 24px;
@@ -814,5 +810,276 @@ a.goToBoard {
     color:black;
 }
 .whiteColor{
-    color:white;
+    color: white;
+}
+.greenFont{
+    color:green;
+}
+
+/*slider*/
+.gallery {
+    border: 15px solid #FFFFFF;
+    border-radius: 5px;
+    height: 400px;
+    margin: 20px auto;
+    position: relative;
+    width: 320px;
+}
+.gallery-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 320px;
+    height: 400px;
+}
+.arrow {
+    cursor: pointer;
+    display: block;
+    height: 62px;
+    margin-top: 41%;
+    outline: medium none;
+    position: absolute;
+    top: 50%;
+    width: 64px;
+    z-index: 5;
+}
+.arrow.prev {
+    background-image: url("../img/leftArrow.png");
+    left: 3px;
+    opacity: 0.7;
+    transition: all 0.2s linear 0s;
+}
+.arrow.next {
+    background-image: url("../img/rightArrow.png");
+    opacity: 0.7;
+    right: 3px;
+    transition: all 0.2s linear 0s;
+}
+.arrow.start {
+    opacity: 0.7;
+    right: 40px;
+    transition: all 0.2s linear 0s;
+    margin-top: 68%;
+}
+.arrow.skip {
+    opacity: 0.7;
+    transition: all 0.2s linear 0s;
+    margin-top: 68%;
+    left: 2px;
+}
+.button {
+    padding: 9px 26px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 2px 8px;
+    cursor: pointer;
+}
+.button5 {
+    background-color: #fcfdfc;
+    color: #040000;
+    border: 3px solid #000b0e;
+    font-size: 20px;
+    font-weight: 800;
+    border-radius: 40px;
+}
+.arrow.prev:hover{
+    opacity:1;
+}
+.arrow.next:hover{
+    opacity:1;
+}
+.tourDiv{
+    color: white;
+    margin-left: 16%;
+    font-size: 22px;
+    font-weight: 800;
+}
+.tourContainer{
+    margin-top: -10%;
+}
+/*slider ends*/
+
+/* The resultsModal (background) */
+.resultsModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+}
+
+/* resultsModal Content */
+.resultsModal-content {
+    position: fixed;
+    bottom: 0;
+    background-color: #fefefe;
+    width: 100%;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s
+}
+
+/* The Close Button */
+.resultsModal_close {
+    color: white;
+    float: right;
+    font-size: 50px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.resultsModal_close:hover,
+.resultsModal_close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.resultsModal-header {
+    padding: 2px 16px;
+    background-color: #33697d;
+    color: white;
+}
+
+.resultsModal-body {padding: 2px 16px;}
+
+
+/*iphone 5 and 5s*/
+
+@media screen and (device-aspect-ratio: 40/71) {
+    /* STYLES GO HERE */
+    .mainBoardContainer {
+        margin-top: 40%;
+    }
+    .gallery {
+        height: 300px;
+        width: 275px;
+    }
+    .gallery-item {
+        width: 250px;
+        height: 275px;
+    }
+    .tourContainer {
+        margin-top: -11%;
+    }
+    .arrow {
+        top: 43%;
+    }
+    .arrow.skip {
+        left: 30%;
+        margin-top: 44%;
+    }
+    .arrow.start {
+        left: 30%;
+        margin-top: 44%;
+        opacity:1;
+    }
+    nav {
+        padding: 23px 2px 0px 0px;
+    }
+    #logo {
+        width: 350px;
+        height: 97px;
+        margin: -28px 0 -89px -23px;
+    }
+    .tourDiv {
+        margin-left: 11%;
+    }
+    .battingBtn {
+        top: 46%;
+    }.bowlingBtn {
+        top: 65%;
+    }
+    .sett_ip {
+        margin-left: 4%;
+        height: 20px;
+    }
+    .ip_title {
+        padding: 19% 0 1% 2%;
+    }
+}
+
+/*iphone 6 */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : portrait) {
+    /*@media screen and (device-aspect-ratio: 375/667) {*/
+    .customScoreCard{
+        margin-left: 10px;
+        width:55px;
+    }
+    .battingBtn{
+        right: 15%;
+        top: 42%;
+    }
+    .bowlingBtn{
+        right: 15%;
+        top: 61%;
+    }
+    .mainBoardContainer {
+        margin-top: 35%;
+    }
+    .arrow.skip {
+        margin-top: 43%;
+        left: 32%;
+    }
+    .arrow.start {
+        left: 32%;
+        margin-top: 43%;
+        opacity:1;
+    }
+    
+    
+}
+
+/*6 plus iphone*/
+@media only screen
+and (min-device-width : 414px)
+and (max-device-width : 736px)
+and (device-width : 414px)
+and (device-height : 736px)
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio : 3)
+and (-webkit-device-pixel-ratio : 3)
+{
+    /*@media screen and (device-aspect-ratio: 16/9) {*/
+    .customScoreCard{
+        margin-left: 10px;
+        width:60px;
+    }
+    .battingBtn{
+        right: 15%;
+        top: 45%;
+    }
+    .bowlingBtn{
+        right: 15%;
+        top: 62%;
+    }
+    .mainBoardContainer {
+        margin-top: 40%;
+    }
+    .arrow.skip {
+        margin-top: 43%;
+        left: 32%;
+    }
+    .arrow.start {
+        left: 32%;
+        margin-top: 43%;
+        opacity:1;
+    }
+    
+}
+
+body {
+    overflow: hidden;
+    overflow-y: auto;
 }
