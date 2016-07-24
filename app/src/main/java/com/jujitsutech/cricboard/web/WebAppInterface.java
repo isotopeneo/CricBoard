@@ -47,9 +47,6 @@ public class WebAppInterface {
         Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
         emailIntent.setType("application/csv");
         emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[] {""});
-
-        emailIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-        emailIntent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
         emailIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
 
         mContext.startActivity(Intent.createChooser(emailIntent, "Share..."));
