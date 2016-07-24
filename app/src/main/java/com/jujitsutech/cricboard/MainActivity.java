@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void initializeAd() {
-        MobileAds.initialize(getApplicationContext(), getString(R.string.banner_ad_unit_id));
+        MobileAds.initialize(getApplicationContext(), getString(R.string.app_id));
         AdView adView = (AdView) findViewById(R.id.adView);
         if (adView == null) return;
         AdRequest request;
