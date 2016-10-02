@@ -340,8 +340,7 @@
             {src: './img/tour/CB3.png', desc: 'Image 03'},
             {src: './img/tour/CB4.png', desc: 'Image 04'},
             {src: './img/tour/CB5.png', desc: 'Image 05'},
-            {src: './img/tour/CB6.png', desc: 'Image 06'},
-            {src: './img/tour/CB7.png', desc: 'Image 07'}
+            {src: './img/tour/CB6.png', desc: 'Image 06'}
         ];
 
 
