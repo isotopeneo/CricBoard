@@ -490,9 +490,7 @@ div,li {
     width: 100%;
     z-index: 10
 }
-.close{
-    margin-left: 34%;
-}
+
 .close a{
     color: #FB1B1B;
     text-decoration: none;
@@ -511,7 +509,11 @@ div,li {
     right: 8%;
     top: 19%;
 }
-
+#apply{
+    text-decoration: none;
+    font-size: 46px;
+    font-weight: 800;
+}
 
 /* Portrait and Landscape */
 @media only screen
@@ -595,14 +597,12 @@ and (-webkit-min-device-pixel-ratio: 2) {
         right: 15%;
         top: 56%;
     }
-    .close {
-        margin-left: 34% !important;
-    }
     #alertsModel .close {
         margin-left: 42% !important;
         margin-top: 53%;
     }
 }
+
 header {
     background: #fff;
     width: 100%;

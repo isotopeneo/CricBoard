@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html ng-app="crickMeBoardApp">
-    <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-            <title>Cricket Score Board</title>
-            <link rel="stylesheet" href="./css/scoreBoardStyles.css"/>
-            <script src="./js/angular.min.js"></script>
-            <script src="./js/jquery.js"></script>
-            <body ng-controller="crickMeBoardController">
-                <div class="ng-cloak">
-                    <header>
-                        <a href="#" id="logo"></a>
-                        <nav>
-                            <a href="#" id="menu-icon" data-ng-click="openMenu()"></a>
-                            <ul data-ng-show="toggleCricMenu">
-                                <li data-ng-click="backToSettings()">
-                                    <img class="undoIcon" src="img/settings.png"/>
-                                    <span id="settingsMenu"  style="cursor: pointer; font-weight:bold; font-style:italic; float:right">Settings</span>
-                                </li>
-                                <li data-ng-click="backToScoreBoard()">
-                                    <img class="undoIcon" src="img/board.png"/>
-                                    <spa id="scoreBoardMenu"  style="cursor: pointer; font-weight:bold; font-style:italic; float:right">ScoreBoard</span>
-                                </li>
-                                <li data-ng-click="backToNewMatch()">
-                                    <img class="undoIcon" src="img/restart.png"/>
-                                    <span id="scoreBoardMenu"  style="cursor: pointer; font-weight:bold; font-style:italic; float:right">Restart match</span>
-                                </li>
-                                <li data-ng-click="exportToExcel()">
-                                    <img class="undoIcon" src="img/export.png"/>
-                                    <span id="exportToExcel"   style="cursor: pointer; font-weight:bold; font-style:italic; float:right">Share</span>
-                                </li>
-                                <li data-ng-click="backToTourGuide()">
-                                    <img class="undoIcon" src="img/help.png"/>
-                                    <span id="tourGuideMenu"  style="cursor: pointer; font-weight:bold; font-style:italic; float:right">Help</span>
-                                </li>
-                            </ul>
-                        </nav>
-                    </header>
-                    
-                    <div class="mainBoardContainer">
-                        <div class="boardSettings" data-ng-show="!playStarted && !showTourGuide">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    <title>Cricket Score Board</title>
+    <link rel="stylesheet" href="./css/scoreBoardStyles.css"/>
+    <script src="./js/angular.min.js"></script>
+    <script src="./js/jquery.js"></script>
+<body ng-controller="crickMeBoardController">
+<div class="ng-cloak">
+    <header>
+        <a href="#" id="logo"></a>
+        <nav>
+            <a href="#" id="menu-icon" data-ng-click="openMenu()"></a>
+            <ul data-ng-show="toggleCricMenu">
+                <li data-ng-click="backToSettings()">
+                    <img class="undoIcon" src="img/settings.png"/>
+                    <span id="settingsMenu"  style="cursor: pointer; font-weight:bold; font-style:italic; float:right">Settings</span>
+                </li>
+                <li data-ng-click="backToScoreBoard()">
+                    <img class="undoIcon" src="img/board.png"/>
+                    <spa id="scoreBoardMenu"  style="cursor: pointer; font-weight:bold; font-style:italic; float:right">ScoreBoard</span>
+                </li>
+                <li data-ng-click="backToNewMatch()">
+                    <img class="undoIcon" src="img/restart.png"/>
+                    <span id="scoreBoardMenu"  style="cursor: pointer; font-weight:bold; font-style:italic; float:right">Restart match</span>
+                </li>
+                <li data-ng-click="exportToExcel()">
+                    <img class="undoIcon" src="img/export.png"/>
+                    <span id="exportToExcel"   style="cursor: pointer; font-weight:bold; font-style:italic; float:right">Share</span>
+                </li>
+                <li data-ng-click="backToTourGuide()">
+                    <img class="undoIcon" src="img/help.png"/>
+                    <span id="tourGuideMenu"  style="cursor: pointer; font-weight:bold; font-style:italic; float:right">Help</span>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="mainBoardContainer">
+        <div class="boardSettings" data-ng-show="!playStarted && !showTourGuide">
                             <span class="settingsInput">
                                 <input class="sett_ip" type="text" id="input-7" min="0" max="50" step="1" placeholder="0" numbers-only data-ng-model="totalInningsOvers">
                                     <label class="ipLable ipText" for="input-7">
@@ -51,159 +51,162 @@
                                     <label class="ipLable ipText" for="input-8">
                                         <span class="ip_title ip_title_text">Team - A</span>
                                     </label>
-                                    </span>
-                            <span class="battingBtn">
+                                <span class="battingBtn">
                                 <input id="radio1" type="radio" name="radio" value="TEAMA" checked="checked" data-ng-model="chooseBattingSide" ng-change='battingSideChanged()'>
                                     <label for="radio1">
                                         <span><span><img class="cricIcon" src="./img/cricBat.png"/></span></span></label>
                                     </span>
+                                    </span>
+
                             <span class="settingsInput">
                                 <input class="sett_ip" type="text" id="input-9" placeholder="Name" data-ng-model="teamB_Name">
                                     <label class="ipLable ipText" for="input-9">
                                         <span class="ip_title ip_title_text">Team - B</span>
                                     </label>
-                                    </span>
-                            <span class="bowlingBtn">
+                                <span class="bowlingBtn">
                                 <input id="radio2" type="radio" name="radio" value="TEAMB" data-ng-model="chooseBattingSide" ng-change='battingSideChanged()'>
                                     <label for="radio2">
                                         <span><span><img class="cricIcon" src="./img/cricBat.png"/></span></span></label>
                                     </span>
-                        </div>
-                        <div class="play-button playWrapper" data-ng-show="!playStarted && !showTourGuide"  data-ng-click="startPlay()"></div>
-                        <div class="scoreBoardWrapper animate-slide" data-ng-show="playStarted && !showTourGuide"  ng-class="{'slide-up': playStarted, 'slide-down': !playStarted}">
-                            <div class="scoreBoard_Container1 scoreBoard-widget ">
-                                <div class="battingSide"><h3>{{firstInningsComplete == true ?bowlingSideTitle.toUpperCase() : battingSideTitle.toUpperCase();}}</h3></div>
-                                <div class="innerBoard">
-                                    <div style="float:left;" class="teamA">
-                                        <div><span class="boardTitles">Score</span></div>
-                                        <div class="template">
-                                            <span class="number">{{currentTeamScore}}</span>
-                                            <span class="number">/</span>
-                                            <span class="number">{{totalWickets}}</span>
-                                        </div>
-                                    </div>
-                                    <div style="float:right" class="teamA">
-                                        <div><span class="boardTitles">Overs</span></div>
-                                        <div class="template">
-                                            <span class="number">{{currentTeamPlayedOvers}}</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="battingSide" data-ng-if="firstInningsComplete && !matchOver"><h3 class="greenFont"> TO WIN - {{teamBWinningsRuns}}</h3></div>
-                            </div>
-                            <div class="scoreBoard_Container2 scoreBoard-widget overDetails">
-                                <div><h3>This Over</h3></div>
-                                <div class="oversDetails">
-                                    <div class="nav">
-                                        <div class="versions">
-                                            <a ng-repeat="ball in teamEachOver">{{ball.ballStatus}}</a>
-                                        </div>
-                                    </div>
-                                    <div class="nav">
-                                        <span>Balls : </span>
-                                        <span>{{ballCount}}</span>
-                                    </div>
-                                    <div class="nav">
-                                        <span>Runs : </span>
-                                        <span>{{currentOverScore}}</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="scoreBoard_Container3 scoreBoard-widget controlsDetails" data-ng-hide="matchOver">
-                                <button class="scoreCard customScoreCard white btn" data-ng-click="updateScore('UN')" data-ng-disabled="getBallStatus()"><img src="img/undo.png" class="undoIcon"></button>
-                                <div class="scoreCard customScoreCard yellow" data-ng-click="updateScore(0)">0</div>
-                                <div class="scoreCard  customScoreCard purple" data-ng-click="updateScore(1)">1</div>
-                                <div class="scoreCard customScoreCard purple" data-ng-click="updateScore(2)">2</div>
-                                <div class="scoreCard customScoreCard purple" data-ng-click="updateScore(3)">3</div>
-                                <div class="scoreCard customScoreCard green" data-ng-click="updateScore(4)">4</div>
-                                <div class="scoreCard customScoreCard green" data-ng-click="updateScore(6)">6</div>
-                                <div class="scoreCard customScoreCard wine"   data-ng-click="showExtraRunPopup()">Xtra</div>
-                            </div>
-                            <div class="scoreBoard_Container scoreBoard-widget overDetails">
-                                <div><h3>Overs Played</h3></div>
-                                <div class="oversDetails" ng-repeat="eachOver in totalOversDetails |reverse" id="runsScoreBoardOverAll">
-                                    <div class="nav">
-                                        <div class="paddingLeft10">
-                                            <span>over</span>
-                                            <a>{{totalOversDetails.length - $index}}</a>
-                                        </div>
-                                    </div>
-                                    <div class="nav">
-                                        <span class="versions">
-                                            <a ng-repeat="eachBall in eachOver" ng-if="!eachBall.isScoreObj">{{eachBall.ballStatus}}</a>
-                                        </span>
-                                    </div>
-                                    <div class="nav" ng-repeat="eachBall in eachOver" ng-if="eachBall.isScoreObj">
-                                        <span class="paddingLeft10">This Over Runs : </span>
-                                        <span>{{eachBall.lastOverScore}}</span>
-                                    </div>
-                                </div>
-                            </div>
+                                    </span>
+
+        </div>
+        <div class="play-button playWrapper" data-ng-show="!playStarted && !showTourGuide"  data-ng-click="startPlay()"></div>
+        <div class="scoreBoardWrapper animate-slide" data-ng-show="playStarted && !showTourGuide"  ng-class="{'slide-up': playStarted, 'slide-down': !playStarted}">
+            <div class="scoreBoard_Container1 scoreBoard-widget ">
+                <div class="battingSide"><h3>{{firstInningsComplete == true ?bowlingSideTitle.toUpperCase() : battingSideTitle.toUpperCase();}}</h3></div>
+                <div class="innerBoard">
+                    <div style="float:left;" class="teamA">
+                        <div><span class="boardTitles">Score</span></div>
+                        <div class="template">
+                            <span class="number">{{currentTeamScore}}</span>
+                            <span class="number">/</span>
+                            <span class="number">{{totalWickets}}</span>
                         </div>
                     </div>
-                    <a id="openExtraScore" href="#extraRunsModel" data-ng-hide="true">
-                        Launch A Modal
-                    </a>
-                    <div id="extraRunsModel">
-                        <div class="extraRunsModel-content">
-                            <div class="copy">
-                                <div class="scoreCard  ball black" data-ng-click="updateExtraScore(0,'ex_0')" id="ex_0">0</div>
-                                <div class="scoreCard  ball black" data-ng-click="updateExtraScore(1,'ex_1')" id="ex_1">1</div>
-                                <div class="scoreCard  ball black" data-ng-click="updateExtraScore(2,'ex_2')" id="ex_2">2</div>
-                                <div class="scoreCard  ball black" data-ng-click="updateExtraScore(3,'ex_3')" id="ex_3">3</div>
-                                <div class="scoreCard  ball black" data-ng-click="updateExtraScore(5,'ex_5')" id="ex_5">5</div>
-                                <div class="scoreCard  ball black"  data-ng-click="updateExtraScore(4,'ex_4')" id="ex_4">4</div>
-                                <div class="scoreCard  ball black"  data-ng-click="updateExtraScore(6,'ex_6')" id="ex_6">6</div>
-                                <div class="scoreCard  ball black"   data-ng-click="updateExtraScore('WICKET','ex_WK')" id="ex_WK">WK</div>
-                                <div class="scoreCard  ball black"   data-ng-click="updateExtraScore('LEGBYE','ex_LB')" id="ex_LB">LB</div>
-                                <div class="scoreCard  ball black"   data-ng-click="updateExtraScore('WB','ex_WB')" id="ex_WB">WB</div>
-                                <div class="scoreCard  ball black"   data-ng-click="updateExtraScore('NB','ex_NB')" id="ex_NB">NB</div>
-                                <div class="scoreCard ball black" data-ng-click="updateScore('BYE','ex_BY')" id="ex_BY">BY</div>
-                                <div class="scoreCard  ball green whiteColor" id="apply" data-ng-click="applyExtraScores();">+</div>
-                                <div class="scoreCard ball yellow close"><a href="#" id="closeExtra">X</a></div>
-                            </div>
-                        </div>
-                        <div class="overlay"></div>
-                    </div>
-                    <div data-ng-show="showTourGuide" class="tourContainer">
-                        <div class="tourDiv"><h2>App Quick Tour</h2> </div>
-                        <div class="gallery">
-                            <gallery ng-model="gallery"></gallery>
-                        </div>
-                    </div>
-                    <button id="resultsModalBtn" style="display:none" data-ng-click="openResultsModal();">Open Modal</button>
-                    
-                    <div id="resultsModal" class="resultsModal">
-                        <div class="resultsModal-content">
-                            <div class="resultsModal-header">
-                                <span class="resultsModal_close">x</span>
-                                <h2>{{resultsHeader}}</h2>
-                            </div>
-                            <div class="resultsModal-body">
-                                <h3>{{resultsContent1}}</h3>
-                                <h3>{{resultsContent2}}</h3>
-                            </div>
+                    <div style="float:right" class="teamA">
+                        <div><span class="boardTitles">Overs</span></div>
+                        <div class="template">
+                            <span class="number">{{currentTeamPlayedOvers}}</span>
+                            </span>
                         </div>
                     </div>
                 </div>
-                <script src="./js/scoreBoard.js"></script>
-                <script type="text/javascript">
-                    $('body').prepend('<a href="#" class="goToBoard"></a>');
-                    var amountScrolled = 300;
-                    $(window).scroll(function() {
-                                     if ( $(window).scrollTop() > amountScrolled ) {
-                                     $('a.goToBoard').fadeIn('slow');
-                                     } else {
-                                     $('a.goToBoard').fadeOut('slow');
-                                     }
-                                     });
-                                     $('a.goToBoard').click(function() {
-                                                            $('html, body').animate({
-                                                                                    scrollTop: 0
-                                                                                    }, 700);
-                                                            return false;
-                                                            });
-                    </script>
-            </body>
+                <div class="battingSide" data-ng-if="firstInningsComplete && !matchOver"><h3 class="greenFont"> TO WIN - {{teamBWinningsRuns}}</h3></div>
+            </div>
+            <div class="scoreBoard_Container2 scoreBoard-widget overDetails">
+                <div><h3>This Over</h3></div>
+                <div class="oversDetails">
+                    <div class="nav">
+                        <div class="versions">
+                            <a ng-repeat="ball in teamEachOver">{{ball.ballStatus}}</a>
+                        </div>
+                    </div>
+                    <div class="nav">
+                        <span>Balls : </span>
+                        <span>{{ballCount}}</span>
+                    </div>
+                    <div class="nav">
+                        <span>Runs : </span>
+                        <span>{{currentOverScore}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="scoreBoard_Container3 scoreBoard-widget controlsDetails" data-ng-hide="matchOver">
+                <div class="scoreCard customScoreCard yellow" data-ng-click="updateScore(0)">0</div>
+                <div class="scoreCard  customScoreCard purple" data-ng-click="updateScore(1)">1</div>
+                <div class="scoreCard customScoreCard purple" data-ng-click="updateScore(2)">2</div>
+                <div class="scoreCard customScoreCard purple" data-ng-click="updateScore(3)">3</div>
+                <div class="scoreCard customScoreCard green" data-ng-click="updateScore(4)">4</div>
+                <div class="scoreCard customScoreCard green" data-ng-click="updateScore(6)">6</div>
+                <div class="scoreCard customScoreCard wine"   data-ng-click="showExtraRunPopup()">Xtra</div>
+                <button class="scoreCard customScoreCard white btn" data-ng-click="updateScore('UN')" data-ng-disabled="getBallStatus()"><img src="img/undo.png" class="undoIcon"></button>
+            </div>
+            <div class="scoreBoard_Container scoreBoard-widget overDetails">
+                <div><h3>Overs Played</h3></div>
+                <div class="oversDetails" ng-repeat="eachOver in totalOversDetails |reverse" id="runsScoreBoardOverAll">
+                    <div class="nav">
+                        <div class="paddingLeft10">
+                            <span>over</span>
+                            <a>{{totalOversDetails.length - $index}}</a>
+                        </div>
+                    </div>
+                    <div class="nav">
+                                        <span class="versions">
+                                            <a ng-repeat="eachBall in eachOver" ng-if="!eachBall.isScoreObj">{{eachBall.ballStatus}}</a>
+                                        </span>
+                    </div>
+                    <div class="nav" ng-repeat="eachBall in eachOver" ng-if="eachBall.isScoreObj">
+                        <span class="paddingLeft10">This Over Runs : </span>
+                        <span>{{eachBall.lastOverScore}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="openExtraScore" href="#extraRunsModel" data-ng-hide="true">
+        Launch A Modal
+    </a>
+    <div id="extraRunsModel">
+        <div class="extraRunsModel-content">
+            <div class="copy">
+                <div class="scoreCard  ball black" data-ng-click="updateExtraScore(0,'ex_0')" id="ex_0">0</div>
+                <div class="scoreCard  ball black" data-ng-click="updateExtraScore(1,'ex_1')" id="ex_1">1</div>
+                <div class="scoreCard  ball black" data-ng-click="updateExtraScore(2,'ex_2')" id="ex_2">2</div>
+                <div class="scoreCard  ball black" data-ng-click="updateExtraScore(3,'ex_3')" id="ex_3">3</div>
+                <div class="scoreCard  ball black" data-ng-click="updateExtraScore(5,'ex_5')" id="ex_5">5</div>
+                <div class="scoreCard  ball black"  data-ng-click="updateExtraScore(4,'ex_4')" id="ex_4">4</div>
+                <div class="scoreCard  ball black"  data-ng-click="updateExtraScore(6,'ex_6')" id="ex_6">6</div>
+                <div class="scoreCard  ball black"   data-ng-click="updateExtraScore('WICKET','ex_WK')" id="ex_WK">WK</div>
+                <div class="scoreCard  ball black"   data-ng-click="updateExtraScore('LEGBYE','ex_LB')" id="ex_LB">LB</div>
+                <div class="scoreCard  ball black"   data-ng-click="updateExtraScore('WB','ex_WB')" id="ex_WB">WB</div>
+                <div class="scoreCard  ball black"   data-ng-click="updateExtraScore('NB','ex_NB')" id="ex_NB">NB</div>
+                <div class="scoreCard ball black" data-ng-click="updateExtraScore('BYE','ex_BY')" id="ex_BY">BY</div>
+                <!--<div class="scoreCard ball black" data-ng-click="updateExtraScore('OT','ex_OT')" id="ex_OT">OT</div>-->
+                <div class="scoreCard  ball green whiteColor" id="apply" data-ng-click="applyExtraScores();">+</div>
+                <div class="scoreCard ball yellow close" id="closeExtraDiv"><a href="#" id="closeExtra">X</a></div>
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </div>
+    <div data-ng-show="showTourGuide" class="tourContainer">
+        <div class="tourDiv"><h2>App Quick Tour</h2> </div>
+        <div class="gallery">
+            <gallery ng-model="gallery"></gallery>
+        </div>
+    </div>
+    <button id="resultsModalBtn" style="display:none" data-ng-click="openResultsModal();">Open Modal</button>
+
+    <div id="resultsModal" class="resultsModal">
+        <div class="resultsModal-content">
+            <div class="resultsModal-header">
+                <span class="resultsModal_close">x</span>
+                <h2>{{resultsHeader}}</h2>
+            </div>
+            <div class="resultsModal-body">
+                <h3>{{resultsContent1}}</h3>
+                <h3>{{resultsContent2}}</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./js/scoreBoard.js"></script>
+<script type="text/javascript">
+    $('body').prepend('<a href="#" class="goToBoard"></a>');
+    var amountScrolled = 300;
+    $(window).scroll(function() {
+        if ( $(window).scrollTop() > amountScrolled ) {
+            $('a.goToBoard').fadeIn('slow');
+        } else {
+            $('a.goToBoard').fadeOut('slow');
+        }
+    });
+    $('a.goToBoard').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 700);
+        return false;
+    });
+</script>
+</body>
 </html>
