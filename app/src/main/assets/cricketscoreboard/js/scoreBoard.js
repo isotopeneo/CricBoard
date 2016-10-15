@@ -230,6 +230,13 @@
             $scope.showTourGuide = true;
             $scope.openMenu();
         };
+       $scope.backToAppInfo = function(){
+       $scope.openResultsModal();
+       $scope.resultsHeader = "Developers Site";
+       $scope.resultsContent1 = "Check it here: http://cricscores.rocks";
+       $scope.openMenu();
+       };
+
         $scope.backToNewMatch = function () {
             $window.location.reload();
         };
