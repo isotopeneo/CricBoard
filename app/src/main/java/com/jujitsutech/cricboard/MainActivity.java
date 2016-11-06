@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     private WebView webView;
     private final String URL = "file:///android_asset/cricketscoreboard/cricketScoreBoard.html";
+    private AdView adView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void initializeAd() {
         MobileAds.initialize(getApplicationContext(), getString(R.string.app_id));
-        AdView adView = (AdView) findViewById(R.id.adView);
+        adView = (AdView) findViewById(R.id.adView);
         if (adView == null) return;
         AdRequest request;
         if (BuildConfig.DEBUG) {
@@ -58,5 +59,27 @@ public class MainActivity extends AppCompatActivity {
         adView.loadAd(request);
     }
 
+    @Override
+    protected void onDestroy() {
+        if (adView != null) {
+            adView.destroy();
+        }
+        super.onDestroy();
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (adView != null) {
+            adView.resume();
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        if (adView != null) {
+            adView.pause();
+        }
+        super.onPause();
+    }
 }
